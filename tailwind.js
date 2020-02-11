@@ -1,7 +1,10 @@
 module.exports = {
     theme: {
-        container: {
-            padding: '1.5rem',
+        screeens: {
+            sm: '640px', 
+            md: '768px', 
+            lg: '1024px', 
+            xl: '1280px' 
         },
         extend: {
             colors: {
@@ -29,6 +32,10 @@ module.exports = {
                 },
             };
             addUtilities(utils, ['responsive'])
-        }
-    ]
+        },
+        require('tailwind-bootstrap-grid')()
+    ],
+    corePlugins: {
+        container: false
+    }
 };

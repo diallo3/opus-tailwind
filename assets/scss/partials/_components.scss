@@ -1,2 +1,138 @@
 // Add any custom components here
 //@import '../components/Example';
+.vertical-center {
+    @apply absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+$text-arrow-space: 16px;
+$shaft-width: 32px;
+$shaft-thickness: 1px;
+$arrow-head-width: 6px;
+$arrow-head-thickness: $shaft-thickness;
+.the-arrow {
+    width: $shaft-width;
+    transition: all 0.2s;
+    &.-left {
+        @apply absolute w-4/6 left-0;
+        top: 50%;
+        >.shaft {
+            @apply w-0;
+            background-color: currentColor;
+            &:before,
+            &:after {
+                @apply w-0;
+                background-color: currentColor;
+            }
+            &:before {
+                transform: rotate(0);
+            }
+            &:after {
+                transform: rotate(0);
+            }
+        }
+    }
+    &.-right {
+        top: 0;
+        >.shaft {
+            width: $shaft-width;
+            transition-delay: 0.2s;
+            &:before,
+            &:after {
+                width: $arrow-head-width;
+                transition-delay: 0.3s;
+                transition: all 0.5s;
+            }
+            &:before {
+                transform: rotate(40deg);
+            }
+            &:after {
+                transform: rotate(-40deg);
+            }
+        }
+    }
+    >.shaft {
+        @apply block relative;
+        height: $shaft-thickness;
+        transition: all 0.2s;
+        transition-delay: 0;
+        will-change: transform;
+        &:before,
+        &:after {
+            @apply block absolute top-0 right-0;
+            background-color: currentColor;
+            content: '';
+            height: $arrow-head-thickness;
+            transition: all 0.2s;
+            transition-delay: 0;
+        }
+        &:before {
+            transform-origin: top right;
+        }
+        &:after {
+            transform-origin: bottom right;
+        }
+    }
+}
+
+// Animated Arrow Button
+.animated-arrow {
+    @apply text-white block relative text-base tracking-wider no-underline uppercase;
+    transition: all 0.2s;
+    // &:hover {
+    //     color: #fff;
+    //     >.the-arrow.-left {
+    //         >.shaft {
+    //             width: $shaft-width;
+    //             transition-delay: 0.1s;
+    //             background-color: #fff;
+    //             &:before,
+    //             &:after {
+    //                 width: $arrow-head-width;
+    //                 transition-delay: 0.1s;
+    //                 background-color: #fff;
+    //             }
+    //             &:before {
+    //                 transform: rotate(40deg);
+    //             }
+    //             &:after {
+    //                 transform: rotate(-40deg);
+    //             }
+    //         }
+    //     }
+    //     >.main {
+    //         transform: translateX($shaft-width + $text-arrow-space);
+    //         >.the-arrow.-right {
+    //             >.shaft {
+    //                 width: 0;
+    //                 transform: translateX(200%);
+    //                 transition-delay: 0;
+    //                 &:before,
+    //                 &:after {
+    //                     width: 0;
+    //                     transition-delay: 0;
+    //                     transition: all 0.1s;
+    //                 }
+    //                 &:before {
+    //                     transform: rotate(0);
+    //                 }
+    //                 &:after {
+    //                     transform: rotate(0);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    >.main {
+        @apply flex justify-end items-center;
+        transition: all 0.2s;
+        >.text {
+            margin: 0 $text-arrow-space 0 0;
+            line-height: 1;
+        }
+        >.the-arrow {
+            position: relative;
+        }
+    }
+}

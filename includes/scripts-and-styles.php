@@ -2,6 +2,7 @@
 
 
 use WpTailwindCssThemeBoilerplate\AssetResolver;
+use WpTailwindCssThemeBoilerplate\TimberInit;
 
 
 add_action( 'wp_enqueue_scripts', function () {

@@ -19,7 +19,8 @@ if (local.proxy) {
         injectChanges: true,
         open: false,
         files: [
-            'build/**/*.{css,js}'
+            'build/**/*.{css,js}',
+            'templates/**/*.twig'
         ]
     });
 }
@@ -35,6 +36,8 @@ mix.purgeCss({
     paths: () => glob.sync([
         path.join(__dirname, '*.php'),
         path.join(__dirname, 'templates/**/*.php'),
+        path.join(__dirname, '*.twig'),
+        path.join(__dirname, 'templates/**/*.twig'),
         path.join(__dirname, 'build/js/**/*.js'),
     ]),
 });
