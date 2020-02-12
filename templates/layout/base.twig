@@ -2,7 +2,7 @@
 </head>
 {% endblock %}
 
-<body class="{{body_class}}" data-template="base.twig">
+<body class="{{body_class}} bg-gray-100" data-template="base.twig">
     <a class="skip-link hidden screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
     <header id="headerMain" class="header top-0 absolute z-50 w-full">
         {% block header %} {#
@@ -26,7 +26,13 @@
                 <nav class="sm:col-12 md:col-auto" role="navigation">
                     <menu class="flex flex-col lg:flex-row list-none px-0 my-0">
                         <li class="flex items-center">
-                            <a class="lg:text-white lg:hover:text-gray-300 text-gray-800 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">Docs</a>
+                            <a class="lg:text-white lg:hover:text-gray-300 text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">Docs</a>
+                        </li>
+                        <li class="flex items-center">
+                            <a class="lg:text-white lg:hover:text-gray-300 text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">Docs</a>
+                        </li>
+                        <li class="flex items-center">
+                            <a class="lg:text-white lg:hover:text-gray-300 text-white px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold" href="#">Docs</a>
                         </li>
                         <li class="flex items-center">
                             <button class="bg-white text-gray-800 active:bg-gray-100 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3" type="button" style="transition: all 0.15s ease 0s;"> Download</button>
@@ -39,12 +45,14 @@
         {% endblock %}`
     </header>
 
-    <div id="pageHero" class="page-hero bg-black h-screen relative pt-20 pb-3">
+    <div id="pageHero" class="page-hero bg-black bg-no-repeat bg-cover bg-overlay h-screen pt-20 pb-10 overflow-x-hidden" style="background-image: url('https://picsum.photos/1200/800')">
         <div class="container">
             <div class="row vertical-center">
-                <div class="md:col-5">
+                <div class="sm:col-12 lg:col-5">
                     <div class="entry text-white py-10">
-                        <h1 class="text-white mb-2">This is the Title</h1>
+                        <span class="glyph glyph-left"></span>
+
+                        <h1 class="text-white text-6xl font-thin mb-2">This is the main long title</h1>
                         <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus veniam ipsam voluptatibus, totam magni nam adipisci odit, ex enim eum voluptas a, aspernatur optio. Ratione quod vero nesciunt dolore?</p>
 
                         <a class='animated-arrow text-white' href='#'>
@@ -63,11 +71,145 @@
                 </div>
             </div>
         </div>
+
+        <!-- ctas -->
+        <div class="container absolute inset-x-0 bottom-0 py-16 text-white">
+            <div class="row justify-around">
+                <div class="sm:col-12 md:col-4">
+                    <a href="" class="btn btn-ghost ">This is a button</a>
+                </div>
+                <div class="sm:col-12 md:col-4">
+                    <a href="" class="btn btn-ghost">This is a button</a>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <section class="overflow-x-hidden">
+        <div class="container pt-20 pb-40">
+            <article class="row">
+                <div class="sm:col-12 md:col-6">
+                    <span class="glyph glyph-left">&nbsp;</span>
+                    <h2 class="text-5xl font-thin mb-4">This is a section title</h2>
 
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima asperiores dolorem, cum architecto iure numquam ullam esse voluptatibus aperiam libero deserunt debitis quisquam est voluptates, doloremque, consequatur nobis aliquid
+                        iste.
+                    </p>
 
-    <section id="content" role="main" class="content-wrapper">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima asperiores dolorem, cum architecto iure numquam ullam esse voluptatibus aperiam libero deserunt debitis quisquam est voluptates, doloremque, consequatur nobis aliquid
+                        iste.
+                    </p>
+
+                </div>
+                <div class="sm:col-12 md:col-6">
+                    <figure class="relative h-full">
+                        <img src="https://picsum.photos/id/1/500" alt="" class="absolute top-0 left-0 mt-16 ml-24 z-10">
+                        <img src="https://picsum.photos/id/1003/500" alt="" class="absolute top-0 left-0">
+                    </figure>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div id="pageSlider" class="page-slider bg-black bg-no-repeat bg-cover bg-overlay h-screen pt-20 pb-10 overflow-x-hidden" style="background-image: url('https://picsum.photos/1200/800')">
+        <div class="container">
+            <div class="row vertical-center">
+                <div class="md:col-5">
+                    <div class="entry text-white py-10">
+                        <span class="glyph glyph-left"></span>
+
+                        <h1 class="text-white text-5xl font-thin mb-2">This is the Title</h1>
+                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus veniam ipsam voluptatibus, totam magni nam adipisci odit, ex enim eum voluptas a, aspernatur optio. Ratione quod vero nesciunt dolore?</p>
+
+                        <a class='animated-arrow text-white' href='#'>
+                            <span class='the-arrow -left bg-white'>
+							  <span class='shaft'></span>
+                            </span>
+                            <span class='main'>
+							  <span class='text-white mr-3'>Learn More</span>
+                            <span class='the-arrow -right bg-white'>
+									<span class='shaft text-white'></span>
+                            </span>
+                            </span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="overflow-x-hidden">
+        <div class="container pt-20 pb-40">
+            <article class="row">
+                <div class="sm:col-12 md:col-6">
+                    <figure class="relative h-full">
+                        <img src="https://picsum.photos/id/1035/500" alt="" class="absolute top-0 left-0 -ml-24 z-10">
+                        <img src="https://picsum.photos/id/1033/500" alt="" class="absolute top-0 mt-16 left-0">
+                    </figure>
+                </div>
+                <div class="sm:col-12 md:col-6">
+                    <span class="glyph glyph-right">&nbsp;</span>
+                    <h2 class="text-5xl font-thin mb-4">This is a div title</h2>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima asperiores dolorem, cum architecto iure numquam ullam esse voluptatibus aperiam libero deserunt debitis quisquam est voluptates, doloremque, consequatur nobis aliquid
+                        iste.</p>
+
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima asperiores dolorem, cum architecto iure numquam ullam esse voluptatibus aperiam libero deserunt debitis quisquam est voluptates, doloremque, consequatur nobis aliquid
+                        iste.</p>
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="pageHook" class="page-hook bg-black bg-no-repeat bg-cover bg-overlay py-20 overflow-x-hidden" style="background-image: url('https://picsum.photos/1200/800')">
+        <div class="container">
+            <div class="row">
+                <div class="md:col-7">
+                    <div class="entry text-white py-5">
+                        <span class="glyph glyph-left"></span>
+
+                        <h1 class="text-white text-5xl font-thin mb-2">Saving Your Bottom Line</h1>
+                        <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis natus veniam ipsam voluptatibus, totam magni nam adipisci odit, ex enim eum voluptas a, aspernatur optio. Ratione quod vero nesciunt dolore?</p>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="sm:col-12 md:col-4">
+                        <figure class="mb-3">
+                            <img src="https://picsum.photos/id/1/400/200" class="max-h-full w-full" alt="">
+                        </figure>
+                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero error maxime labore deleniti porro velit voluptatem magnam, dolore soluta non eligendi in officiis dolor.</p>
+                    </div>
+                    <div class="sm:col-12 md:col-4">
+                        <figure class="mb-3">
+                            <img src="https://picsum.photos/id/1/400/200" class="max-h-full w-full" alt="">
+                        </figure>
+                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero error maxime labore deleniti porro velit voluptatem magnam, dolore soluta non eligendi in officiis dolor.</p>
+                    </div>
+                    <div class="sm:col-12 md:col-4">
+                        <figure class="mb-3">
+                            <img src="https://picsum.photos/id/1/400/200" class="max-h-full w-full" alt="">
+                        </figure>
+                        <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero error maxime labore deleniti porro velit voluptatem magnam, dolore soluta non eligendi in officiis dolor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="getStarted" class="py-40 overflow-x-hidden">
+        <div class="container">
+            <div class="row mb-4">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="content" role="main" class="content-wrapper">
         {% if title %}
         <h1>{{title}}</h1>{% endif %}
         <div class="wrapper {{sidebar_class}}">
@@ -78,7 +220,7 @@
             {{sidebar}}
         </aside>
         {% endif %}
-    </section>
+    </section> -->
 
     {% block footer %}
     <footer id="footer">

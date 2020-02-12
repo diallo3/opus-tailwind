@@ -1,9 +1,55 @@
 // Add any custom components here
 //@import '../components/Example';
+// additonal utilitie
+.bg-overlay {
+    position: relative;
+    &::before {
+        @apply absolute top-0 right-0 bottom-0 left-0;
+        content: "";
+        background-color: rgba($color: #000000, $alpha: .5);
+    }
+}
+
 .vertical-center {
     @apply absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+
+// Heros
+.page-hero {
+    a {
+        @apply text-white;
+    }
+}
+
+.btn {
+    @apply text-center border border-solid block p-3;
+    color: currentColor;
+    border-color: currentColor;
+}
+
+// specials
+.glyph {
+    @apply border border-solid inline-block mb-8 w-10 h-10 relative;
+    &::after {
+        content: "";
+        @apply absolute w-screen bg-blue-600 bottom-0;
+        height: 3px;
+        bottom: -1rem;
+    }
+    &-left {
+        margin-left: 30%;
+        &::after {
+            @apply right-0;
+        }
+    }
+    &-right {
+        margin-left: 40%;
+        &::after {
+            @apply left-0;
+        }
+    }
 }
 
 $text-arrow-space: 16px;
