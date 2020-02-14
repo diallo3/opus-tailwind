@@ -1,5 +1,5 @@
-<div class="Example bg-blue-100 fixed flex inset-0 items-center justify-center">
-    <div class="Example__inner bg-white max-w-2xl p-12 rounded-lg shadow-lg text-center">
+<div class="fixed inset-0 flex items-center justify-center bg-blue-100 Example">
+    <div class="max-w-2xl p-12 text-center bg-white rounded-lg shadow-lg Example__inner">
 
         <h1 class="Example__title">WP Tailwind CSS Theme Boilerplate</h1>
 
