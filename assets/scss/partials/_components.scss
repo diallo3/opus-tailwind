@@ -61,7 +61,7 @@ $arrow-head-thickness: $shaft-thickness;
     width: $shaft-width;
     transition: all 0.2s;
     &.-left {
-        @apply absolute w-4/6 left-0;
+        @apply absolute w-full left-0;
         top: 50%;
         >.shaft {
             @apply w-0;

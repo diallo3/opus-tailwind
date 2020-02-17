@@ -1,8 +1,8 @@
 module.exports = {
 
-    init: function () {
+    init: function() {
         // do something here
-        //alert('example 2 is working...');
+        // alert('example 2 is working...');
     }
 
 };

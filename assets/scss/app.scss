@@ -6,3 +6,23 @@
 @import "partials/components";
 @import "~tailwindcss/utilities";
 @import "partials/utilities";
+@import "vendor/vendor";
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    height: 100vh !important;
+    min-height: 100% !important;
+}
+
+.swiper-container-vertical>.swiper-pagination-bullets {
+    @apply .fixed;
+}
