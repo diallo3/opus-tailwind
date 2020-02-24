@@ -1,0 +1,60 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+	<div id="fullPage" class="fs-container">
+            <div class="fs-slide" data-midnight="black">
+                {% include "components/home/home-hero.twig" with { 
+                    id: 'pageHero' ,
+                    section: 'secondSection'
+                } %}
+            </div>
+            <div class="fs-slide" data-midnight="white">
+                {% for item in post.meta('initial_summary') %}
+                    {% include "components/home/home-copy-img.twig" with {
+                        id: '', 
+                        dir: '', 
+                        section: 'thirdSection',
+                        heading: item.title,
+                        content: item.summary,
+                        images: item.images,
+                        img1: 'absolute top-0 left-0 z-10 mt-16 ml-24', 
+                        img2: 'absolute top-0 left-0',
+                        aos1: 'fade-up',
+                        aos2: 'fade-left'
+                    } %}
+                {% endfor %}
+            </div>
+            <div class="fs-slide" data-midnight="black">
+                {% include "components/home/home-slider.twig"  with {
+                    section: 'fourthSection'
+                } %}
+            </div>
+            <div class="fs-slide" data-midnight="white">
+                {% for item in post.meta('mid_summary') %}
+                {% include "components/home/home-copy-img.twig" with { 
+                    id: 'difference', 
+                    dir: 'flex-row-reverse', 
+                    img1: 'absolute top-0 left-0 z-10 -ml-24', 
+                    img2: 'absolute top-0 left-0 mt-16', 
+                    type: 'right',
+                    fade: 'left',
+                    section: 'fifthSection',
+                    heading: item.title,
+                    content: item.summary,
+                    images: item.images,
+                    aos1: 'fade-up',
+                    aos2: 'fade-right'
+                } %}
+                {% endfor %}
+            </div>
+            <div class="fs-slide" data-midnight="black">
+                {% include "components/home/home-summary.twig" with {
+                    section: 'sixthSection'
+                } %}
+            </div>
+            <div class="fs-slide" data-midnight="white">
+                {% include "components/section-get-started.twig" %}
+            </div>
+        </div>
+	<!-- /content-wrapper -->
+{% endblock %}

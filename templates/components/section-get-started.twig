@@ -1,0 +1,39 @@
+{% set started = options.get_started %}
+<div class="container-fluid bg-gray-200">
+<section id="getStarted" class="py-20">
+    <div class="container">
+        <div class="row">
+            <div class="sm:col-12 md:col-8">
+                {% include "partial/inc-glyph.twig" %}
+                <h1 class="mb-2 text-5xl font-thin"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                >{{started.title}}</h1>
+                <p data-aos="fade-up" data-aos-delay="500">{{started.entry}}</p>
+            </div>
+        </div>
+        <div class="mb-4 row">
+            {% for item in started.types %}
+
+                {% set counter = ( counter | default(0) ) + 300 %}
+                <div class="px-4 sm:col-12 md:col-6">
+                    <div class="flex content-center relative h-64 p-6 mb-8 text-white bg-black bg-center bg-no-repeat bg-cover border c-started bg-overlay" style="background-image: url( {{ Image(item.image).src }});"
+                        data-aos="fade-up"
+                        data-aos-delay="{{counter}}"
+                    >
+                        <div class="relative text-white c-started__entry">
+                            <h2 class="mb-2 text-2xl font-light text-white uppercase">{{item.title}}</h2>
+                            <p class="text-sm mt-0">{{item.entry}}</p>
+                            {% include "partial/inc-cta-arrow.twig" with { 
+                                link: item.link.url, 
+                                color: 'text-white', 
+                                bg: 'bg-white' } %}
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+</div>

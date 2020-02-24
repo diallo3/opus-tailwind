@@ -1,0 +1,31 @@
+.form-container {
+    box-shadow: -3px -3px 2px rgba($color: #000000, $alpha: .1);
+    .hbspt-form {
+        fieldset {
+            @apply w-full max-w-full;
+        }
+        label {
+            @apply text-xs block text-gray-700 uppercase mb-2;
+            .hs-form-required {
+                @apply text-red-700 inline-block px-2;
+            }
+            &.hs-error-msg {
+                @apply text-red-700 text-xxs capitalize;
+            }
+        }
+        input.hs-input {
+            @apply form-input mb-4 block;
+            width: 100% !important;
+        }
+        .hs-error-msgs,
+        .hs-error-msgs li {
+            @apply list-none px-0;
+            span {
+                @apply text-xxs text-red-700 capitalize;
+            }
+        }
+        .hs-button {
+            @apply bg-blue-500 text-white uppercase font-bold p-4 my-3 block rounded-sm w-full;
+        }
+    }
+}

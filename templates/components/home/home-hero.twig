@@ -1,0 +1,45 @@
+
+{% set hero = post.meta('hero') %}
+
+{% for header in hero.header %}
+
+    {% set img = header.page_background_image %}
+    <section id="{{id}}" class="h-screen pt-20 pb-10 overflow-x-hidden bg-black bg-no-repeat bg-cover page-hero bg-overlay" style="background-image: url('{{ Image(img).src }}')">
+        <div class="container">
+            <div class="row">
+                <div class="sm:col-12 lg:col-7">
+                    <div class="py-10 text-white entry">
+                            {% include "partial/inc-glyph.twig" %}
+                        
+
+                        <h1 class="mb-2 text-7xl font-thin text-white uppercase">
+                            <span class="text-5xl block uppercase">{{header.title_accent}}</span>
+                            {{ header.page_title_alternative }}
+                        </h1>
+                        <p class="">{{ header.page_summary }}</p>
+
+                        {% include "partial/inc-cta-arrow.twig" with { 
+                            link: header.page_link.url, 
+                            color: 'text-white', 
+                            bg: 'bg-white' 
+                        } %}
+                    </div>
+                </div>
+
+            </div>
+            <!-- ctas -->
+            <div class="justify-around row sm:py-5 md:py-10 relative" data-aos="fade-up">
+                {% for item in hero.ctas %}
+                    <div class="sm:col-12 md:col-4">
+                        <a href="{{ item.link.url }}" class="btn btn-ghost">{{ item.link.title }}</a>
+                    </div>
+                {% endfor %}
+
+                {% include "partial/inc-down-arrow.twig" %}
+            </div>
+        </div>
+
+        
+    </section>
+
+{% endfor %}

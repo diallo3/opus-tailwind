@@ -11,9 +11,15 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_register_style( 'app', AssetResolver::resolve( 'css/app.css' ), [], false );
 	wp_register_script( 'app', AssetResolver::resolve( 'js/app.js' ), [], false );
 
+
 	// enqueue global assets
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_style( 'app' );
 	wp_enqueue_script( 'app' );
+
+	// Hubspot
+	if ( is_singular( 'casestudies' ) || is_page('contact') ) {
+		wp_enqueue_script( 'hubspot', '//js.hsforms.net/forms/v2.js', null, false );
+	}
 
 } );

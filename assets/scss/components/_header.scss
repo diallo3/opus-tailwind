@@ -1,0 +1,17 @@
+.headroom--fixed {
+    @apply w-full fixed;
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+
+.headroom--pinned {
+    transform: translateY(0%);
+}
+
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+.header--phone {
+    width: 200px;
+}

@@ -1,42 +1,22 @@
-// Add any custom components here
-//@import '../components/Example';
-// additonal utilitie
-.bg-overlay {
-    position: relative;
-    &::before {
-        @apply absolute top-0 right-0 bottom-0 left-0;
-        content: "";
-        background-color: rgba($color: #000000, $alpha: .5);
+// Midnight
+.midnightHeader {
+    &.default,
+    &.black {
+        @apply text-white fill-current;
     }
-}
-
-.vertical-center {
-    @apply absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-// Heros
-.page-hero {
-    a {
-        @apply text-white;
+    &.white {
+        @apply text-gray-700 fill-current;
     }
-}
-
-.btn {
-    @apply text-center border border-solid block p-3;
-    color: currentColor;
-    border-color: currentColor;
 }
 
 // specials
 .glyph {
-    @apply border border-solid inline-block mb-8 w-10 h-10 relative;
+    @apply inline-block mb-8 w-10 h-10 relative;
     &::after {
         content: "";
         @apply absolute w-screen bg-blue-600 bottom-0;
         height: 3px;
-        bottom: -1rem;
+        bottom: -.7rem;
     }
     &-left {
         margin-left: 30%;
@@ -50,6 +30,12 @@
             @apply left-0;
         }
     }
+}
+
+.vertical-center {
+    @apply absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 $text-arrow-space: 16px;
@@ -124,7 +110,7 @@ $arrow-head-thickness: $shaft-thickness;
 
 // Animated Arrow Button
 .animated-arrow {
-    @apply text-white block relative text-base tracking-wider no-underline uppercase;
+    @apply text-white relative text-base tracking-wider no-underline uppercase;
     transition: all 0.2s;
     // &:hover {
     //     color: #fff;
@@ -179,6 +165,110 @@ $arrow-head-thickness: $shaft-thickness;
         }
         >.the-arrow {
             position: relative;
+        }
+    }
+}
+
+// down arrow
+.down-arrow span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    border-left: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-animation: sdb04 2s infinite;
+    animation: sdb04 2s infinite;
+    box-sizing: border-box;
+}
+
+@-webkit-keyframes sdb04 {
+    0% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+    20% {
+        -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+    }
+    40% {
+        -webkit-transform: rotate(-45deg) translate(0, 0);
+    }
+}
+
+@keyframes sdb04 {
+    0% {
+        transform: rotate(-45deg) translate(0, 0);
+    }
+    20% {
+        transform: rotate(-45deg) translate(-10px, 10px);
+    }
+    40% {
+        transform: rotate(-45deg) translate(0, 0);
+    }
+}
+
+// swiper
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    height: 100vh !important;
+    min-height: 100% !important;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets {
+    @apply left-0 right-0 text-left px-0;
+    bottom: 10rem !important;
+    .swiper-pagination-bullet {
+        opacity: .3;
+        width: 2rem;
+        height: 4px;
+        border-radius: 0;
+        background-color: currentColor;
+        transition: all .2s ease-in-out;
+        &-active {
+            width: 4rem;
+            opacity: 1;
+        }
+    }
+}
+
+.swiper-container-vertical>.swiper-pagination-bullets {
+    @apply .fixed;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: currentColor !important;
+}
+
+hr {
+    border-top: 1px solid #999;
+    margin: 3rem auto;
+    width: 60%;
+    &::after {
+        content: '';
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: 50%;
+        padding: 2.5rem;
+        left: 50%;
+        position: absolute;
+        transform: translateY(-50%) translateX(-50%);
+        padding: 20px;
+    }
+}
+
+.section-block {
+    ul {
+        @apply pl-10 .list-disc;
+        li {
+            @apply text-sm mb-4;
         }
     }
 }

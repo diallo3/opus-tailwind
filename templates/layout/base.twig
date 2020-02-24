@@ -1,26 +1,44 @@
 {% block html_head_container %} 
-{% include 'html-header.twig' %} 
+    {% include 'html-header.twig' %} 
 {% block head %} 
 {% endblock %}
 </head>
 {% endblock %}
 
-<body class="{{body_class}} bg-gray-100" data-template="base.twig">
-    {# <a class="hidden skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a> #}
-    <main id="mainContent" class="overflow-x-hidden content-wrapper" role="main">
+    {% set bcks = [
+        'bg_0000.jpg',
+        'bg_0001.jpg',
+        'bg_0002.jpg',
+        'bg_0003.jpg',
+        'bg_0004.jpg',
+        'bg_0005.jpg',
+        'bg_0006.jpg',
+        'bg_0007.jpg',
+        'bg_0008.jpg',
+        'bg_0009.jpg',
+        'bg_0010.jpg',
+        'bg_0011.jpg',
+        'bg_0012.jpg',
+        'bg_0013.jpg',
+        'bg_0014.jpg'
+    ] %}
 
-        {% include "partial/inc-header.twig" %}
+    <body class="{{body_class}} bg-gray-100" data-template="base.twig">
+        {# <a class="hidden skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a> #}
+        <main id="mainContent" class="overflow-x-hidden content-wrapper" role="main">
 
-        {% block content %}
-            Sorry, no content
-        {% endblock %}
+            {% include "partial/inc-header.twig" %}
 
-        {% block footer %}
-            {% include "partial/inc-footer.twig" %}
-        {% endblock %} 
-    </main>
-   
-    {{ function('wp_footer') }} 
-</body>
+            {% block content %}
+                Sorry, no content
+            {% endblock %}
+
+            {% block footer %}
+                {% include "partial/inc-footer.twig" %}
+            {% endblock %} 
+        </main>
+    
+        {{ function('wp_footer') }} 
+    </body>
 
 </html>

@@ -2,30 +2,39 @@
 
 {% block content %}
 	<div class="content-wrapper">
-		<div class="post-hero flex content-center min-h-1/2 text-white bg-black bg-no-repeat bg-cover bg-overlay mb-5 py-24 px-3" style="background-image: url('https://picsum.photos/1200/800')">
+		<div class="post-hero flex content-center min-h-1/2 text-white bg-black bg-no-repeat bg-cover bg-overlay mb-5 py-32 px-3" style="background-image: url('https://picsum.photos/1200/800')">
 			<div class="container flex items-center">
-				<div class="row w-full relative text-center">
-					<div class="entry sm:col-12 md:col-8 mx-auto">
+				<div class="row w-full relative">
+					<div class="entry sm:col-12 md:col-9">
 						{# {% include "partial/inc-glyph.twig" %} #}
-						<time class="text-xs uppercase" datetime="{{ post.date|date('Y-m-d H:i:s') }}"> {{ post.date }} </time>
+						<span class="text-xs uppercase">Case Study</span>
 						<h1 class="font-light text-white text-5xl">{{post.title}}</h1>
-						<p class="text-xs my-1 uppercase">
-							<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a>
-						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-		<article class="container post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+		<article class="container-fluid relative lg:-mt-20 post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
 			<section class="row article-content">
-				<div class="sm:col-12 md:col-8 mx-auto article-body js-sticky-sharebar-target">
+				<div class="sm:col-12 md:col-6 py-32 lg:pl-32 article-body">
 					{{post.content}}
 				</div>
 
-				{# <p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <
-				</p> #}
+                <div class="form-container sm:col-12 md:col-6 bg-white lg:rounded-tl-sm">
+                    <div class="px-20 py-10 mx-auto">
+                        <script>
+                        hbspt.forms.create({
+                            portalId: "1614529",
+                            formId: "0b405e20-2bf3-42ac-8344-ab6b90155b9e",
+                            css: ''
+                        });
+                        </script>
+                    </div>
+                </div>
 			</section>
+
+            
+
+            
 		</article>
 
 		<div class="related bg-gray-200">
@@ -33,7 +42,7 @@
 					<div class="row py-8">
 						<div class="sm:col-12 md:col-8">
 							{% include "partial/inc-glyph.twig" %}
-							<h2 class="text-5xl">Related Stories</h2>
+							<h2 class="text-5xl">Related Case Studies</h2>
 						</div>
 					</div>
 					<div class="row">

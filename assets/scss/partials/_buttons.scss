@@ -1,0 +1,14 @@
+// main
+.btn {
+    @apply text-center text-sm uppercase block px-3 py-4;
+    color: currentColor;
+    border-color: currentColor;
+    &-ghost {
+        @apply border border-solid;
+        background-color: rgba(#000, .35);
+        &:hover {
+            @apply text-black bg-white;
+            border-color: currentColor;
+        }
+    }
+}

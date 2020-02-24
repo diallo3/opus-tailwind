@@ -1,0 +1,38 @@
+<section id="{{id}}" class="section-block">
+    <div class="container pt-20 pb-40 relative">
+        <article class="row {{dir ? dir : '' }}">
+            <div class="sm:col-12 md:col-6">
+                {% include "partial/inc-glyph.twig" %}
+                <div class="entry" data-aos="fade-up" data-aos-delay="150">
+                    <h2 class="mb-4 text-5xl font-thin lg:mr-24 uppercase">{{heading}}</h2>
+                    {{content}}
+                </div>
+
+                <div class="cta" data-aos="fade-up" data-aos-delay="200">
+                    {% include "partial/inc-cta-arrow.twig" with { 
+                        link: '#', 
+                        color: 'text-blue-600',
+                        bg: 'bg-black' 
+                    } %}
+                </div>
+
+            </div>
+            <div class="sm:col-12 md:col-6">
+                <figure class="relative h-full">
+                    {% set count = 0 %}
+                    {% for image in images %}
+                        {% set counter = ( counter | default(0) ) + 200 %}
+                        <img src="{{ Image(image).src }}" class="{{ loop.first ? img2 : img1 }}" width="540" alt=""
+                            data-aos="{{ loop.first ? aos1 : aos2 }}"
+                            data-aos-offset="{{ loop.first ? 100 : 200 }}"
+                            data-aos-delay="{{counter}}"
+                        >
+                    {% endfor %}
+                </figure>
+            </div>
+        </article>
+
+
+        {% include "partial/inc-down-arrow.twig" %}
+    </div>
+</section>

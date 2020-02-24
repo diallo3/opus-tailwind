@@ -1,0 +1,28 @@
+<nav id="mainNav" class="sm:col-12 md:col-auto" role="navigation">
+    <menu class="md:flex flex-col px-0 my-0 list-none lg:flex-row hidden">
+        {% for item in main.get_items %}
+        <li class="{{ item.classes | join(' ') }} flex items-center">
+            <a class="flex items-center p-3 text-sm font-bold uppercase lg:py-4" href="{{item.link}}" title="{{item.title}}">
+                {{item.title}}
+            </a>
+        </li>
+        {% endfor %}
+        <li class="flex items-center border-b border-l rounded-sm lg:ml-6">
+            <a href="#" class="text-2xl block relative px-3 -mt-1 font-semibold">{{ options.phone.toll_free }}</a>
+        </li>
+    </menu>
+    <menu class="flex flex-col px-0 my-0 list-none lg:flex-row md:hidden">
+        <li class="flex items-center">
+            <m-burger menu="mobileNav" fx="collapse">
+                <style>
+                    m-burger {
+                        color: #fff;
+                        --mb-bar-height: 2px;
+                        --mb-bar-spacing: 8px;
+                    }
+                </style>
+
+                Menu</m-burger>
+        </li>
+    </menu>
+</nav>

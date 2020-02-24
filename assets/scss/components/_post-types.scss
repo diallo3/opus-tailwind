@@ -1,0 +1,28 @@
+// Default text
+// =≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠=≠
+.article-content {
+    @include headings() {
+        @apply leading-relaxed mb-4 relative;
+    }
+    @include headings(1, 4) {
+        @apply pb-4 mb-8;
+        &:after {
+            content: "";
+            @apply bg-blue-600 w-1/5 absolute left-0 bottom-0;
+            height: 2px;
+        }
+    }
+    p {
+        @apply leading-relaxed mb-6;
+    }
+    ul,
+    ol {
+        @apply block list-disc mb-6 pl-10;
+        li {
+            @apply list-disc mb-1;
+        }
+    }
+    ol li {
+        @apply list-decimal;
+    }
+}
