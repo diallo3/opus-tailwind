@@ -1,0 +1,32 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<div class="post-hero flex content-center min-h-1/2 text-white bg-black bg-no-repeat bg-cover bg-overlay mb-5 py-24 px-3" style="background-image: url('https://picsum.photos/1200/800')">
+			<div class="container flex items-center">
+				<div class="row w-full relative text-center">
+					<div class="entry sm:col-12 md:col-8 mx-auto">
+						<time class="text-xs uppercase" datetime="{{ post.date|date('Y-m-d H:i:s') }}"> {{ post.date }} </time>
+						<h1 class="font-light text-white text-5xl">{{post.title}}</h1>
+						<p class="text-xs my-1 uppercase">
+							<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<article class="container post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<section class="row article-content">
+				<div class="sm:col-12 md:col-8 mx-auto article-body js-sticky-sharebar-target">
+					{{post.content}}
+				</div>
+
+				{# <p class="blog-author">
+					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> <
+				</p> #}
+			</section>
+		</article>
+
+	<!-- /content-wrapper -->
+
+{% endblock %}

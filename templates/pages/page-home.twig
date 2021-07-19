@@ -1,0 +1,20 @@
+{% extends "layout/base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+
+		{% include "partials/sections/section-page-header.twig" %}
+
+		<article class="post-type-{{post.post_type}} container" id="post-{{post.ID}}" data-midnight="black">
+			<section class="row article-content">
+				<div class="sm:col-12  bg-gray-100 -mt-10 md:px-24 pt-8 rounded-sm article-body">
+					{{post.content}}
+				</div>
+			</section>
+		</article>
+		
+		
+
+	</div>
+	<!-- /content-wrapper -->
+{% endblock %}
