@@ -17,12 +17,4 @@ add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'app' );
 	wp_enqueue_script( 'app' );
 
-<<<<<<< HEAD
-=======
-	// Hubspot
-	if ( is_singular( 'casestudies' ) || is_page('contact') ) {
-		wp_enqueue_script( 'hubspot', '//js.hsforms.net/forms/v2.js', null, false );
-	}
-
->>>>>>> a7d82a523e589144748a069c44e4d11d94ba622c
 } );

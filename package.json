@@ -1,17 +1,17 @@
 {
     "name": "wp-laravel-mix-theme-boilerplate",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "",
     "directories": {
         "test": "tests"
     },
     "scripts": {
-        "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "cross-env NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "test": "cross-env nyc ava --verbose --serial",
-        "posttest": "cross-env nyc report --reporter=html"
+        "webpack": "mix",
+        "dev": "mix watch",
+        "hmr": "mix watch --hot",
+        "prod": "mix --production",
+        "test": "mix nyc ava --verbose --serial",
+        "posttest": "mix nyc report --reporter=html"
     },
     "author": "Phil Kurth <phil@philkurth.com.au>",
     "license": "MIT",
@@ -30,6 +30,5 @@
         "sass-loader": "12.*",
         "tailwindcss": "^2.2.4",
         "vue-template-compiler": "^2.6.14"
-    },
-    "dependencies": {}
+    }
 }
