@@ -1,63 +1,47 @@
-A boilerplate for WordPress theme development using [TailwindCSS](https://tailwindcss.com/) and [Laravel Mix](https://laravel.com/docs/5.8/mix).
+<p><img src="https://tailpress.io/images/logo.svg" width="200" alt="Laravel Mix"></p>
 
-## Getting started:
+# Introduction
+TailPress is a minimal boilerplate theme for WordPress using [TailwindCSS](https://tailwindcss.com/), with [PostCSS](https://postcss.org) and [Laravel Mix](https://laravel-mix.com/).
 
-1. Clone into an empty theme directory
-1. `cd` into your new theme directory
-1. Run `npm install`
-1. Duplicate the `local-example.json` file to `local.json`, then replace the `proxy` value with your local 
-development hostname
-   - This will allow you to use live reload/injection while working on your CSS/JS
-1. Run a search & replace across the theme to replace all instances of 'WpTailwindCssThemeBoilerplate' with a PHP 
-namespace specific to your theme/project
-1. Change the theme information in `style.css`
-1. Activate your theme
-1. Run `npm run dev` and start coding
-   
-## Commands
+## Getting started
+* Clone repo `git clone https://github.com/jeffreyvr/tailpress.git && cd tailpress`
+* Run `rm -rf .git` to remove git
+* Run `npm install`
+* Run `npm run development`
+* Run `npm run watch` to start developing
 
-#### `npm run dev`
+You will find the editable CSS and Javascript files within the `/resources` folder.
 
-Assets will be compiled and BrowserSync will proxy the dev host allowing you to work while seeing your CSS and JS changes appear on the site as they are recompiled.
+Before you use your theme in production, make sure you run `npm run production`.
 
-#### `npm run webpack`
+## Block editor support
+TailPress comes with basic support for the [block editor](https://wordpress.org/support/article/wordpress-editor/).
 
-Runs the development build
+CSS-classes for alignment, background and text colors will be generated automatically. You can modify this within the `tailwind.config.js` file.
 
-#### `npm run prod`
+To make the editing experience within the block editor more in line with the front end styling, a `editor-style.css` is generated.
 
-Runs the product build which includes asset file versioning and Purge CSS 
+### Define theme colors
+Four colors (primary, secondary, dark and light) are defined from the beginning. You can modify the colors in `tailpress.json`.
 
-## Versioned Assets
+### Define theme font sizes
+You can modify the font sizes within `tailpress.json`.
 
-Versioned assets will appear in a `build` directory alongside a manifest file which is used while 
-[enqueuing scripts and styles](https://github.com/mishterk/wp-laravel-mix-theme-boilerplate/blob/master/includes/scripts-and-styles.php).
-This saves you the need to adjust version parameters on your assets and makes it possible to remove parameters on 
-asset URLs without losing the ability to force those assets to update in browsers.
+## JIT
+[Tailwind CSS JIT](https://tailwindcss.com/docs/just-in-time-mode#enabling-jit-mode) is used to allow for fast compiling.
 
-## Purge CSS
+## PurgeCSS
+By default, PurgeCSS is enabled. You can modify or disable it by changing the settings in the `tailwind.config.js` file. There are several [PurgeCSS options](https://tailwindcss.com/docs/optimizing-for-production#purge-css-options).
 
-Purge CSS is pretty darn excellent and is used to strip out any CSS that isn't being used during the production build. 
+## Links
+* [TailPress website](https://tailpress.io)
+* [Screencasts](https://www.youtube.com/playlist?list=PL6GBdOp044SHIOSCZejodwr1HcYsC43wG)
+* [TailwindCSS Documentation](https://tailwindcss.com/docs)
+* [Laravel Mix Documentation](https://laravel-mix.com/docs)
 
-It does this by looking through specified template files to work out which CSS selectors have been used. If it can't 
-find a CSS rule being used in the templates, it removes it from the final CSS. 
+## Contributors
+* [Jeffrey van Rossum](https://github.com/jeffreyvr)
+* [All contributors](https://github.com/jeffreyvr/tailpress/graphs/contributors)
 
-See the `paths` option in the `mix.purgeCss()` invocation in `webpack.mix.js` for the file paths being looked at. 
-
-### How to tell Purge CSS to ignore things
-
-The easiest way is to delineate your CSS with comments as per the example below. See 
-[whitelisting](https://www.purgecss.com/whitelisting) for more options.   
-
-```css
-/* purgecss start ignore */
-h1 {
-  color: blue;
-}
-
-h3 {
-  color: green;
-}
-/* purgecss end ignore */
-```
-
+## License
+MIT. Please see the [License File](/LICENSE) for more information.

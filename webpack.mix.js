@@ -1,47 +1,29 @@
-const mix = require('laravel-mix');
-const local = require('./local');
-const glob = require('glob-all');
-require('laravel-mix-versionhash');
-require('laravel-mix-tailwind');
-require('laravel-mix-purgecss');
+let mix = require('laravel-mix');
+let path = require('path');
 
-mix.setPublicPath('./build');
+mix.setPublicPath(path.resolve('./'));
 
-mix.webpackConfig({
-    externals: {
-        "jquery": "jQuery",
-    }
+mix.js('resources/js/app.js', 'assets/js');
+
+mix.postCss("resources/css/app.css", "assets/css");
+
+mix.postCss("resources/css/editor-style.css", "./");
+
+mix.options({
+    postCss: [
+        require('postcss-nested-ancestors'),
+        require('postcss-nested'),
+        require('postcss-import'),
+        require('tailwindcss'),
+        require('autoprefixer'),
+    ]
 });
 
-if (local.proxy) {
-    mix.browserSync({
-        proxy: local.proxy,
-        injectChanges: true,
-        open: false,
-        files: [
-            'build/**/*.{css,js}',
-            'templates/**/*.twig'
-        ]
-    });
-}
+// mix.browserSync({
+//     proxy: 'http://your-website.test',
+//     host: 'your-website.test',
+//     open: 'external',
+//     port: 8000
+// });
 
-mix.tailwind();
-
-mix.js('assets/js/app.js', 'js');
-mix.sass('assets/scss/app.scss', 'css');
-
-// The package internally limits running to production builds so we don't need
-// to wrap this up with a condition.
-mix.purgeCss({
-    paths: () => glob.sync([
-        path.join(__dirname, '*.php'),
-        path.join(__dirname, 'templates/**/*.php'),
-        path.join(__dirname, 'templates/**/*.twig'),
-        path.join(__dirname, 'build/js/**/*.js'),
-    ]),
-});
-
-if (mix.inProduction()) {
-    mix.versionHash();
-    mix.sourceMaps();
-}
+mix.version();
