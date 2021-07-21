@@ -1,11 +1,8 @@
-<p><img src="https://tailpress.io/images/logo.svg" width="200" alt="Laravel Mix"></p>
-
 # Introduction
 TailPress is a minimal boilerplate theme for WordPress using [TailwindCSS](https://tailwindcss.com/), with [PostCSS](https://postcss.org) and [Laravel Mix](https://laravel-mix.com/).
 
 ## Getting started
-* Clone repo `git clone https://github.com/jeffreyvr/tailpress.git && cd tailpress`
-* Run `rm -rf .git` to remove git
+* Clone repo
 * Run `npm install`
 * Run `npm run development`
 * Run `npm run watch` to start developing
