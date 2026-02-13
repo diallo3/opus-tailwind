@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.2.4",
-		"browser-sync": "^2.26.14",
+		"browser-sync": "^2.29.3",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cross-env": "^6.0.3",
 		"laravel-mix": "^6.0.11",
